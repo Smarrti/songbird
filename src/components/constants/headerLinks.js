@@ -1,19 +1,19 @@
 export default [{
   name: 'Разминка',
-  classNames: ['headerLink', 'headerLinkActive'],
+  classNames: 'header__link header__link_active',
 }, {
   name: 'Воробьиные',
-  classNames: ['headerLink'],
+  classNames: 'header__link',
 }, {
   name: 'Лесные птицы',
-  classNames: ['headerLink'],
+  classNames: 'header__link',
 }, {
   name: 'Певчие птицы',
-  classNames: ['headerLink'],
+  classNames: 'header__link',
 }, {
   name: 'Хищные птицы',
-  classNames: ['headerLink'],
+  classNames: 'header__link',
 }, {
   name: 'Морские птицы',
-  classNames: ['headerLink'],
+  classNames: 'header__link',
 }];

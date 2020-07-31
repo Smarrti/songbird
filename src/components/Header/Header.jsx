@@ -4,8 +4,8 @@ import HeaderMenu from '../HeaderMenu/HeaderMenu.jsx';
 
 function Header({ headerLinks }) {
   return (
-    <header>
-      <div>
+    <header className="header">
+      <div className="header__logo">
         <h1>Songbird</h1>
         <span>Score: 0</span>
       </div>
@@ -14,7 +14,7 @@ function Header({ headerLinks }) {
   );
 }
 
-HeaderMenu.propTypes = {
+Header.propTypes = {
   headerLinks: PropTypes.arrayOf(PropTypes.object),
 };
 

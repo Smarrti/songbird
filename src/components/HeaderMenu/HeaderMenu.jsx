@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function HeaderMenu({ headerLinks }) {
   return (
-    <ul>
+    <ul className="header__menu">
       {headerLinks.map((link) => (
-        <li key={link.name} className={link.className}>
+        <li key={link.name} className={link.classNames}>
           {link.name}
         </li>
       ))}
