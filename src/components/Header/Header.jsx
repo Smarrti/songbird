@@ -5,9 +5,9 @@ import HeaderMenu from '../HeaderMenu/HeaderMenu.jsx';
 function Header({ headerLinks }) {
   return (
     <header className="header">
-      <div className="header__logo">
-        <h1>Songbird</h1>
-        <span>Score: 0</span>
+      <div className="header__main">
+        <h1>Song<span>bird</span></h1>
+        <span className="header__score">Score: 0</span>
       </div>
       <HeaderMenu headerLinks={headerLinks} />
     </header>
