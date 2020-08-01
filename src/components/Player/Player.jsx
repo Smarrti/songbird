@@ -8,8 +8,9 @@ function Player({ currentQuestion }) {
     <div className="player">
       <img className="player__image" src={currentQuestion.image} alt=""/>
       <div className="player__description">
-        <div>{currentQuestion.name}</div>
-        <AudioPlayer showSkipControls="true" src={currentQuestion.audio} />
+        <div className="player__bird">{currentQuestion.name}</div>
+        <div className="player__line"></div>
+        <AudioPlayer customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']} layout='horizontal-reverse' showFilledProgress="false" showDownloadProgress="false" showJumpControls="false" src={currentQuestion.audio} />
       </div>
     </div>
   );

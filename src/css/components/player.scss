@@ -1,10 +1,57 @@
 .player {
   display: flex;
-  height: 250px;
+  height: 270px;
   margin: 20px 0;
+  @extend %block;
   &__image {
-    margin: 0 20px;
+    margin: 20px;
     height: 230px;
     width: auto;
   }
+  &__description {
+    width: 100%;
+    margin: 20px;
+    & > * {
+      margin-bottom: 10px;
+    }
+  }
+  &__bird {
+    font-size: 1.8rem;
+  }
+  &__line {
+    border: 1px solid $color-primary;
+  }
+}
+
+.rhap_container {
+  background: none;
+  box-shadow: none;
+}
+
+.rhap_play-pause-button,
+.rhap_volume-button {
+  color: $color-primary;
+}
+
+.rhap_progress-filled,
+.rhap_progress-indicator,
+.rhap_volume-bar {
+  background-color: $color-primary;
+}
+
+.rhap_controls-section {
+  flex: none;
+}
+
+.rhap_time {
+  color: #FFFFFF;
+}
+
+.rhap_rewind-button,
+.rhap_forward-button {
+  display: none;
+}
+
+.rhap_volume-container {
+  width: 100px;
 }
