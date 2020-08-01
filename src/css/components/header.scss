@@ -7,10 +7,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    font-family: 'Dancing Script', cursive;
     font-size: 1.8rem;
-    & > h1 > span {
-      color: $color-primary;
+    & > h1 {
+      font-family: 'Dancing Script', cursive;
+      & > span {
+        color: $color-primary;
+      }
     }
   }
   &__score {
