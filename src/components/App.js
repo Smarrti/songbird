@@ -20,7 +20,7 @@ export default function App() {
     <>
       <Header headerLinks={headerLinks} score={score} />
       <Player currentQuestion={currentQuestion} />
-      <Question />
+      <Question questions={questions} />
     </>
   );
 }
