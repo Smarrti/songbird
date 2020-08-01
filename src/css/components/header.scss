@@ -23,8 +23,7 @@
     list-style: none;
     padding-right: 10px;
     padding-left: 10px;
-    background-color: rgba($color: $color-additional, $alpha: 0.5);
-    border-radius: 10px;
+    @extend %block;
   }
   &__link {
     padding: 15px 10px;
