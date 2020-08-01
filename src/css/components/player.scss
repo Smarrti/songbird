@@ -12,7 +12,7 @@
     width: 100%;
     margin: 20px;
     & > * {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
   }
   &__bird {
@@ -41,6 +41,11 @@
 
 .rhap_controls-section {
   flex: none;
+}
+
+.rhap_main-controls,
+.rhap_volume-controls {
+  margin-right: 10px;
 }
 
 .rhap_time {
