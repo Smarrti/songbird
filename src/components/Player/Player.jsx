@@ -10,7 +10,13 @@ function Player({ currentQuestion }) {
       <div className="player__description">
         <div className="player__bird">{currentQuestion.name}</div>
         <div className="player__line"></div>
-        <AudioPlayer customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']} layout='horizontal-reverse' showFilledProgress="false" showDownloadProgress="false" showJumpControls="false" src={currentQuestion.audio} />
+        <AudioPlayer
+          customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
+          layout='horizontal-reverse'
+          showFilledProgress="false"
+          showDownloadProgress="false"
+          showJumpControls="false"
+          src={currentQuestion.audio} />
       </div>
     </div>
   );
