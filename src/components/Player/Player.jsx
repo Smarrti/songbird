@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Player({ currentQuestion }) {
   return (
     <div className="player">
-      <img src={currentQuestion.image} alt=""/>
+      <img className="player__image" src={currentQuestion.image} alt=""/>
       <div className="player__description">
         <div>{currentQuestion.name}</div>
         <AudioPlayer showSkipControls="true" src={currentQuestion.audio} />
