@@ -3,6 +3,7 @@ import Header from './Header/Header.jsx';
 import headerLinksArray from './constants/headerLinks';
 import Player from './Player/Player.jsx';
 import questionsArray from './constants/questions';
+import Question from './Question/Question.jsx';
 
 function createQuestions() {
   return questionsArray.map((category) => (
@@ -18,6 +19,7 @@ export default function App() {
     <>
       <Header headerLinks={headerLinks} />
       <Player currentQuestion={currentQuestion} />
+      <Question />
     </>
   );
 }
