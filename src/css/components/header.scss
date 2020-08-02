@@ -7,9 +7,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 1.8em;
     & > h1 {
       font-family: 'Dancing Script', cursive;
+      font-size: 5em;
       & > span {
         color: $color-primary;
       }
@@ -19,7 +19,7 @@
     // }
   }
   &__score {
-    font-size: 2em;
+    font-size: 2.5em;
     // @include media-tablet {
     //   font-size: 1.5em;
     // }
@@ -27,7 +27,7 @@
   &__menu {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.2em;
+    font-size: 1.8em;
     list-style: none;
     padding-right: 10px;
     padding-left: 10px;

@@ -25,14 +25,14 @@
     }
   }
   &__name {
-    font-size: 1.6em;
+    font-size: 2em;
   }
   &__species {
-    font-size: 1.0em;
+    font-size: 1.7em;
   }
   &__description {
     margin-top: 10px;
-    font-size: 1.0em;
+    font-size: 1.7em;
   }
   @extend %block;
   @include media-tablet {
