@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background-image: url("../../assets/background.jpg");
+  background: url("../../assets/background.jpg") #000000;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,4 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
   color: $color-text;
+  @include media-adaptive {
+    width: 95%;
+  }
 }

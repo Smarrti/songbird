@@ -3,11 +3,17 @@
   padding: 10px;
   &__bird {
     display: flex;
+    @include media-adaptive {
+      flex-wrap: wrap;
+    }
   }
   &__image {
     width: auto;
     height: 150px;
     margin-right: 10px;
+    @include media-adaptive {
+      margin: 10px auto;
+    }
   }
   &__main {
     width: 100%;

@@ -8,19 +8,37 @@
     height: 230px;
     width: auto;
     border-radius: 10px;
+    @include media-tablet {
+      height: 200px;
+      margin: 10px auto 0 auto;
+    }
   }
   &__description {
     width: 100%;
     margin: 20px;
     & > * {
       margin-bottom: 20px;
+      @include media-tablet {
+        margin-bottom: 10px;
+      }
+    }
+    @include media-tablet {
+      margin: 10px 20px;
     }
   }
   &__bird {
     font-size: 1.8rem;
+    @include media-tablet {
+      font-size: 1.5rem;
+    }
   }
   &__line {
     border: 1px solid $color-primary;
+  }
+  @include media-tablet {
+    flex-wrap: wrap;
+    height: auto;
+    margin: 10px 0;
   }
 }
 

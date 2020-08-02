@@ -14,9 +14,15 @@
         color: $color-primary;
       }
     }
+    @include media-tablet {
+      font-size: 1.5rem;
+    }
   }
   &__score {
     font-size: 2rem;
+    @include media-tablet {
+      font-size: 1.5rem;
+    }
   }
   &__menu {
     display: flex;
@@ -26,6 +32,9 @@
     padding-right: 10px;
     padding-left: 10px;
     @extend %block;
+    @include media-tablet {
+      font-size: 1rem;
+    }
   }
   &__link {
     padding: 15px 10px;
