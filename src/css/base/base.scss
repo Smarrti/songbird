@@ -22,4 +22,7 @@ body {
   @include media-adaptive {
     width: 95%;
   }
+  @include media-tablet {
+    font-size: 8px;
+  }
 }

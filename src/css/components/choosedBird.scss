@@ -25,14 +25,17 @@
     }
   }
   &__name {
-    font-size: 1.6rem;
+    font-size: 1.6em;
   }
   &__species {
-    font-size: 1.0rem;
+    font-size: 1.0em;
   }
   &__description {
     margin-top: 10px;
-    font-size: 1.0rem;
+    font-size: 1.0em;
   }
   @extend %block;
+  @include media-tablet {
+    width: 100%;
+  }
 }

@@ -3,7 +3,7 @@
   list-style: none;
   padding: 10px;
   &__answer {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     padding: 10px 20px;
     cursor: pointer;
     & > * {
@@ -17,4 +17,7 @@
     }
   }
   @extend %block;
+  @include media-tablet {
+    width: 100%;
+  }
 }
