@@ -15,12 +15,13 @@ export default function App() {
   const [headerLinks] = useState(headerLinksArray);
   const [questions] = useState(createQuestions());
   const [currentQuestion] = useState(questions[0]);
+  const [choosedBird] = useState(questions[0]);
   const [score] = useState(0);
   return (
     <>
       <Header headerLinks={headerLinks} score={score} />
       <Player currentQuestion={currentQuestion} />
-      <Question questions={questions} />
+      <Question questions={questions} choosedBird={choosedBird} />
     </>
   );
 }
