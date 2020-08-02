@@ -1,4 +1,32 @@
 .choosed-bird {
   width: 50%;
+  padding: 10px;
+  &__bird {
+    display: flex;
+  }
+  &__image {
+    width: auto;
+    height: 150px;
+    margin-right: 10px;
+  }
+  &__main {
+    width: 100%;
+    & > * {
+      margin-bottom: 10px;
+    }
+    & > .rhap_container > .rhap_main > .rhap_controls-section > .rhap_volume-controls {
+      display: none;
+    }
+  }
+  &__name {
+    font-size: 1.6rem;
+  }
+  &__species {
+    font-size: 1.0rem;
+  }
+  &__description {
+    margin-top: 10px;
+    font-size: 1.0rem;
+  }
   @extend %block;
 }

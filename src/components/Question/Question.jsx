@@ -14,7 +14,7 @@ function Question({ questions, choosedBird }) {
 
 Question.propTypes = {
   questions: PropTypes.arrayOf(PropTypes.any),
-  choosedBird: PropTypes.arrayOf(PropTypes.any),
+  choosedBird: PropTypes.objectOf(PropTypes.any),
 };
 
 export default Question;

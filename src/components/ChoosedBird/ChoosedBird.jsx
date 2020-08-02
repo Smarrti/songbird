@@ -20,7 +20,7 @@ function RightAnswer({ choosedBird }) {
           />
         </div>
       </div>
-      <p className="choosed-bird__description"></p>
+      <p className="choosed-bird__description">{choosedBird.description}</p>
     </div>
   );
 }
