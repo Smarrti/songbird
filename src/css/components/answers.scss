@@ -1,0 +1,5 @@
+.answers {
+  width: 50%;
+  list-style: none;
+  @extend %block;
+}
