@@ -23,6 +23,9 @@ body {
     width: 95%;
   }
   @include media-tablet {
+    font-size: 9px;
+  }
+  @include media-phone {
     font-size: 8px;
   }
 }

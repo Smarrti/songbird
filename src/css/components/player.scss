@@ -12,6 +12,10 @@
       height: 200px;
       margin: 10px auto 0 auto;
     }
+    @include media-phone {
+      height: 170px;
+      margin: 10px auto 0 auto;
+    }
   }
   &__description {
     width: 100%;
@@ -35,7 +39,7 @@
   &__line {
     border: 1px solid $color-primary;
   }
-  @include media-tablet {
+  @include media-mobile {
     flex-wrap: wrap;
     height: auto;
     margin: 10px 0;

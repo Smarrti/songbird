@@ -2,12 +2,12 @@
   display: flex;
   & > *:first-child {
     margin-right: 20px;
-    @include media-tablet {
+    @include media-mobile {
       margin-right: 0;
       margin-bottom: 10px;
     }
   }
-  @include media-tablet {
+  @include media-mobile {
     flex-wrap: wrap;
   }
 }
