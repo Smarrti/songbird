@@ -4,6 +4,7 @@ import headerLinksArray from './constants/headerLinks';
 import Player from './Player/Player.jsx';
 import questionsArray from './constants/questions';
 import Question from './Question/Question.jsx';
+import Button from './Button/Button.jsx';
 
 function createQuestions() {
   return questionsArray.map((category) => (
@@ -22,6 +23,7 @@ export default function App() {
       <Header headerLinks={headerLinks} score={score} />
       <Player currentQuestion={currentQuestion} />
       <Question questions={questions} choosedBird={choosedBird} />
+      <Button />
     </>
   );
 }

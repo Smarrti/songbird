@@ -1,0 +1,12 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  color: $color-text;
+  font-size: 1.2rem;
+  cursor: pointer;
+  @extend %block;
+}
