@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 function RightAnswer({ choosedBird }) {
   return (
-    <div className="right-answer">
-      <div className="right-answer__bird">
-        <img className="right-answer__image" src={choosedBird.image} alt=""/>
-        <div className="right-answer__main">
-          <p className="right-answer__name">{choosedBird.name}</p>
-          <p className="right-answer__species">{choosedBird.species}</p>
+    <div className="choosed-bird">
+      <div className="choosed-bird__bird">
+        <img className="choosed-bird__image" src={choosedBird.image} alt=""/>
+        <div className="choosed-bird__main">
+          <p className="choosed-bird__name">{choosedBird.name}</p>
+          <p className="choosed-bird__species">{choosedBird.species}</p>
           <AudioPlayer
             customControlsSection={['MAIN_CONTROLS', 'VOLUME_CONTROLS']}
             layout='horizontal-reverse'
@@ -20,7 +20,7 @@ function RightAnswer({ choosedBird }) {
           />
         </div>
       </div>
-      <p className="right-answer__description"></p>
+      <p className="choosed-bird__description"></p>
     </div>
   );
 }
