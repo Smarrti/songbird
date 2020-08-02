@@ -5,7 +5,10 @@ function Answers({ questions }) {
   return (
     <ul className="answers">
       {questions.map((question) => (
-        <li className="answers__answer" key={question.name}>{question.name}</li>
+        <li className="answers__answer" key={question.name}>
+          <span>•</span>
+          {question.name}
+        </li>
       ))}
     </ul>
   );
