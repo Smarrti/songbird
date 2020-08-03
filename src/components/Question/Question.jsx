@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Answers from '../Answers/Answers.jsx';
 import ChoosedBird from '../ChoosedBird/ChoosedBird.jsx';
 
-function Question({ questions, choosedBird }) {
+function Question({ questions, choosedBird, checkAnswer }) {
   return (
     <div className="question">
-      <Answers questions={questions} />
+      <Answers questions={questions} checkAnswer={checkAnswer} />
       <ChoosedBird choosedBird={choosedBird} />
     </div>
   );
@@ -15,6 +15,7 @@ function Question({ questions, choosedBird }) {
 Question.propTypes = {
   questions: PropTypes.arrayOf(PropTypes.any),
   choosedBird: PropTypes.objectOf(PropTypes.any),
+  checkAnswer: PropTypes.func,
 };
 
 export default Question;

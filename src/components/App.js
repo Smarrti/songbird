@@ -18,9 +18,19 @@ export default function App() {
   const [questions] = useState(createQuestions());
   const [currentQuestion] = useState(questions[0]);
   const [choosedBird] = useState(questions[0]);
-  const [questionPicture] = useState(unknownBird);
-  const [questionName] = useState('***');
-  const [score] = useState(0);
+  const [questionPicture, setQuestionPicture] = useState(unknownBird);
+  const [questionName, setQuestionName] = useState('***');
+  const [numberQuestion, setNumberQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  function checkAnswer(e) {
+    const answer = e.target.textContent;
+    if (answer.includes(currentQuestion.name)) {
+      setQuestionPicture(currentQuestion.image);
+      setQuestionName(currentQuestion.name);
+      setNumberQuestion(numberQuestion + 1);
+      setScore(score + 5);
+    }
+  }
   return (
     <>
       <Header headerLinks={headerLinks} score={score} />
@@ -29,7 +39,7 @@ export default function App() {
         questionPicture={questionPicture}
         questionName={questionName}
       />
-      <Question questions={questions} choosedBird={choosedBird} />
+      <Question questions={questions} choosedBird={choosedBird} checkAnswer={checkAnswer} />
       <Button />
     </>
   );
