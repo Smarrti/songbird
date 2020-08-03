@@ -6,6 +6,7 @@ import questionsArray from './constants/questions';
 import Question from './Question/Question.jsx';
 import Button from './Button/Button.jsx';
 import unknownBird from '../assets/bird.jpg';
+import playSound from './functions/playSoung';
 
 function createQuestions() {
   return questionsArray.map((category) => (
@@ -29,6 +30,7 @@ export default function App() {
       setQuestionName(currentQuestion.name);
       setNumberQuestion(numberQuestion + 1);
       setScore(score + 5);
+      playSound('win');
     }
   }
   return (
