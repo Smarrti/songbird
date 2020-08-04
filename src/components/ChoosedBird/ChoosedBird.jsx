@@ -17,6 +17,8 @@ function RightAnswer({ choosedBird }) {
             showDownloadProgress="false"
             showJumpControls="false"
             src={choosedBird.audio}
+            preload="metadata"
+            volume="0.5"
           />
         </div>
       </div>
