@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 function Answers({ questions, checkAnswer }) {
   return (
     <ul className="answers">
-      {questions.map((question) => (
+      {questions.map((question, index) => (
         <li className="answers__answer" key={question.name} onClick={checkAnswer}>
-          <span>•</span>
+          <span>{index + 1}.</span>
           {question.name}
         </li>
       ))}
