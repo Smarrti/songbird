@@ -55,6 +55,7 @@ export default function App() {
       <Header headerLinks={headerLinks} score={score} />
       <Player
         currentQuestion={currentQuestion}
+        rightAnswer={rightAnswers[numberQuestion]}
         questionPicture={questionPicture}
         questionName={questionName}
       />

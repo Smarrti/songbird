@@ -3,7 +3,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import PropTypes from 'prop-types';
 
-function Player({ currentQuestion, questionPicture, questionName }) {
+function Player({ currentQuestion, rightAnswer, questionPicture, questionName }) {
   return (
     <div className="player">
       <img className="player__image" src={questionPicture} alt=""/>
@@ -16,7 +16,7 @@ function Player({ currentQuestion, questionPicture, questionName }) {
           showFilledProgress="false"
           showDownloadProgress="false"
           showJumpControls="false"
-          src={currentQuestion.audio} />
+          src={currentQuestion[rightAnswer].audio} />
       </div>
     </div>
   );
@@ -24,6 +24,7 @@ function Player({ currentQuestion, questionPicture, questionName }) {
 
 Player.propTypes = {
   currentQuestion: PropTypes.arrayOf(PropTypes.any),
+  rightAnswer: PropTypes.number,
   questionPicture: PropTypes.string,
   questionName: PropTypes.string,
 };
