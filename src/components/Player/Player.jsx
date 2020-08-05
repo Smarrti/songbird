@@ -23,7 +23,7 @@ function Player({ currentQuestion, questionPicture, questionName }) {
 }
 
 Player.propTypes = {
-  currentQuestion: PropTypes.objectOf(PropTypes.any),
+  currentQuestion: PropTypes.arrayOf(PropTypes.any),
   questionPicture: PropTypes.string,
   questionName: PropTypes.string,
 };
