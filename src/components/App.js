@@ -8,23 +8,43 @@ import Button from './Button/Button.jsx';
 import unknownBird from '../assets/bird.jpg';
 import playSound from './functions/playSoung';
 
+function createArrayOfUniqueNumbers(max, length) {
+  const array = [];
+  for (let i = 0; i < length; i += 1) {
+    let number = Math.floor(Math.random() * max);
+    while (array.includes(number)) {
+      number = Math.floor(Math.random() * max);
+    }
+    array.push(number);
+  }
+  return array;
+}
+
 function createQuestions() {
-  return questionsArray.map((category) => (
-    category[Math.floor(Math.random() * category.length)]
-  ));
+  const arr = questionsArray.map((category) => {
+    const numbers = createArrayOfUniqueNumbers(6, 6);
+    let i = 0;
+    return category.map(() => {
+      i += 1;
+      return category[numbers[i - 1]];
+    });
+  });
+  console.log(questionsArray, arr);
+  return arr;
 }
 
 export default function App() {
   const [headerLinks] = useState(headerLinksArray);
   const [questions] = useState(createQuestions());
   const [currentQuestion] = useState(questions[0]);
-  const [choosedBird, setChoosedBird] = useState('***');
+  const [choosedBird, setChoosedBird] = useState({});
   const [questionPicture, setQuestionPicture] = useState(unknownBird);
   const [questionName, setQuestionName] = useState('***');
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   function checkAnswer(e) {
+    console.log(questions);
     const answer = e.target.textContent;
     if (answer.includes(currentQuestion.name)) {
       setQuestionPicture(currentQuestion.image);
