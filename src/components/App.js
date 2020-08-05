@@ -20,22 +20,15 @@ function createArrayOfUniqueNumbers(max, length) {
   return array;
 }
 
-function createQuestions() {
-  const arr = questionsArray.map((category) => {
-    const numbers = createArrayOfUniqueNumbers(6, 6);
-    let i = 0;
-    return category.map(() => {
-      i += 1;
-      return category[numbers[i - 1]];
-    });
-  });
-  console.log(questionsArray, arr);
+function generateRightAnswers() {
+  const arr = createArrayOfUniqueNumbers(6, 6);
   return arr;
 }
 
 export default function App() {
   const [headerLinks] = useState(headerLinksArray);
-  const [questions] = useState(createQuestions());
+  const [questions] = useState(questionsArray);
+  const [rightAnswers] = useState(generateRightAnswers());
   const [currentQuestion] = useState(questions[0]);
   const [choosedBird, setChoosedBird] = useState({});
   const [questionPicture, setQuestionPicture] = useState(unknownBird);
@@ -44,9 +37,8 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   function checkAnswer(e) {
-    console.log(questions);
     const answer = e.target.textContent;
-    if (answer.includes(currentQuestion.name)) {
+    if (answer.includes(currentQuestion[rightAnswers[numberQuestion]])) {
       setQuestionPicture(currentQuestion.image);
       setQuestionName(currentQuestion.name);
       setNumberQuestion(numberQuestion + 1);
@@ -66,7 +58,7 @@ export default function App() {
         questionPicture={questionPicture}
         questionName={questionName}
       />
-      <Question questions={questions} choosedBird={choosedBird} checkAnswer={checkAnswer} />
+      <Question questions={currentQuestion} choosedBird={choosedBird} checkAnswer={checkAnswer} />
       <Button />
     </>
   );
