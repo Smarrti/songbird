@@ -18,14 +18,13 @@ export default function App() {
   const [headerLinks] = useState(headerLinksArray);
   const [questions] = useState(createQuestions());
   const [currentQuestion] = useState(questions[0]);
-  const [choosedBird, setChoosedBird] = useState(questions[0]);
+  const [choosedBird, setChoosedBird] = useState('***');
   const [questionPicture, setQuestionPicture] = useState(unknownBird);
   const [questionName, setQuestionName] = useState('***');
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   function checkAnswer(e) {
-    console.log(questionsArray);
     const answer = e.target.textContent;
     if (answer.includes(currentQuestion.name)) {
       setQuestionPicture(currentQuestion.image);
