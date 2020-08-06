@@ -9,4 +9,9 @@
   font-size: 2em;
   cursor: pointer;
   @extend %block;
+  &_not-active {
+    cursor: default;
+    color: $color-text-non-active;
+
+  }
 }
