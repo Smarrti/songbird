@@ -55,6 +55,9 @@ export default function App() {
       setChoosedBird(currentQuestion[answer[0] - 1]);
     }
   }
+  function nextLevel() {
+
+  }
   return (
     <>
       <Header headerLinks={headerLinks} score={score} />
@@ -65,7 +68,7 @@ export default function App() {
         questionName={questionName}
       />
       <Question questions={currentQuestion} choosedBird={choosedBird} checkAnswer={checkAnswer} />
-      <Button classesForButton={classesForButton} />
+      <Button classesForButton={classesForButton} nextLevel={nextLevel} />
     </>
   );
 }

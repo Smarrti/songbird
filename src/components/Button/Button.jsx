@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ classesForButton }) {
+function Button({ classesForButton, nextLevel }) {
   return (
-    <div className={classesForButton}>
+    <div className={classesForButton} onClick={nextLevel}>
       Next level
     </div>
   );
@@ -11,6 +11,7 @@ function Button({ classesForButton }) {
 
 Button.propTypes = {
   classesForButton: PropTypes.string,
+  nextLevel: PropTypes.func,
 };
 
 export default Button;
