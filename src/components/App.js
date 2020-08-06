@@ -29,7 +29,7 @@ export default function App() {
   const [headerLinks] = useState(headerLinksArray);
   const [questions] = useState(questionsArray);
   const [rightAnswers] = useState(generateRightAnswers());
-  const [currentQuestion] = useState(questions[0]);
+  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   const [choosedBird, setChoosedBird] = useState({});
   const [questionPicture, setQuestionPicture] = useState(unknownBird);
   const [questionName, setQuestionName] = useState('***');
@@ -56,7 +56,13 @@ export default function App() {
     }
   }
   function nextLevel() {
-
+    setCurrentQuestion(numberQuestion + 1);
+    setNumberQuestion(numberQuestion + 1);
+    setChoosedBird({});
+    setQuestionPicture(unknownBird);
+    setQuestionName('***');
+    setScoreOfLevel(5);
+    setClassesForButton('button button_not-active');
   }
   return (
     <>
