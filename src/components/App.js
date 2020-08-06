@@ -36,6 +36,7 @@ export default function App() {
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
+  const [activeButton] = useState(false);
   function checkAnswer(e) {
     if (!e.target.classList.contains('answers__answer_not-correct')) {
       const answer = e.target.textContent;
@@ -63,7 +64,7 @@ export default function App() {
         questionName={questionName}
       />
       <Question questions={currentQuestion} choosedBird={choosedBird} checkAnswer={checkAnswer} />
-      <Button />
+      <Button active={activeButton} />
     </>
   );
 }
