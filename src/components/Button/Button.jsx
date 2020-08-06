@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ activeButton }) {
+function Button({ classesForButton }) {
   return (
-    <div className={activeButton === true ? 'button' : 'button button_not-active'}>
+    <div className={classesForButton}>
       Next level
     </div>
   );
 }
 
 Button.propTypes = {
-  activeButton: PropTypes.bool,
+  classesForButton: PropTypes.string,
 };
 
 export default Button;

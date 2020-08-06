@@ -36,7 +36,7 @@ export default function App() {
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
-  const [activeButton] = useState(false);
+  const [classesForButton, setClassesForButton] = useState('button button_not-active');
   function checkAnswer(e) {
     if (!e.target.classList.contains('answers__answer_not-correct')) {
       const answer = e.target.textContent;
@@ -46,6 +46,7 @@ export default function App() {
         setNumberQuestion(numberQuestion + 1);
         setScore(score + scoreOfLevel);
         playSound('win');
+        setClassesForButton('button');
       } else {
         setScoreOfLevel(scoreOfLevel - 1);
         e.target.classList.add('answers__answer_not-correct');
@@ -64,7 +65,7 @@ export default function App() {
         questionName={questionName}
       />
       <Question questions={currentQuestion} choosedBird={choosedBird} checkAnswer={checkAnswer} />
-      <Button active={activeButton} />
+      <Button classesForButton={classesForButton} />
     </>
   );
 }
