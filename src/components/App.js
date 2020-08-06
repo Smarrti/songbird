@@ -37,18 +37,21 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   function checkAnswer(e) {
-    const answer = e.target.textContent;
-    if (answer.includes(currentQuestion[rightAnswers[numberQuestion]].name)) {
-      setQuestionPicture(currentQuestion[rightAnswers[numberQuestion]].image);
-      setQuestionName(currentQuestion[rightAnswers[numberQuestion]].name);
-      setNumberQuestion(numberQuestion + 1);
-      setScore(score + scoreOfLevel);
-      playSound('win');
-    } else {
-      setScoreOfLevel(scoreOfLevel - 1);
-      playSound('lose');
+    if (!e.target.classList.contains('answers__answer_not-correct')) {
+      const answer = e.target.textContent;
+      if (answer.includes(currentQuestion[rightAnswers[numberQuestion]].name)) {
+        setQuestionPicture(currentQuestion[rightAnswers[numberQuestion]].image);
+        setQuestionName(currentQuestion[rightAnswers[numberQuestion]].name);
+        setNumberQuestion(numberQuestion + 1);
+        setScore(score + scoreOfLevel);
+        playSound('win');
+      } else {
+        setScoreOfLevel(scoreOfLevel - 1);
+        e.target.classList.add('answers__answer_not-correct');
+        playSound('lose');
+      }
+      setChoosedBird(currentQuestion[answer[0] - 1]);
     }
-    setChoosedBird(currentQuestion[answer[0] - 1]);
   }
   return (
     <>

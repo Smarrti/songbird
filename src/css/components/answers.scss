@@ -6,6 +6,11 @@
     font-size: 1.8em;
     padding: 10px 20px;
     cursor: pointer;
+    &_not-correct {
+      text-decoration: line-through;
+      color: $color-text-non-active;
+      cursor: default;
+    }
     & > * {
       padding-right: 10px;
     }
