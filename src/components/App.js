@@ -38,9 +38,9 @@ export default function App() {
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   function checkAnswer(e) {
     const answer = e.target.textContent;
-    if (answer.includes(currentQuestion[rightAnswers[numberQuestion]])) {
-      setQuestionPicture(currentQuestion.image);
-      setQuestionName(currentQuestion.name);
+    if (answer.includes(currentQuestion[rightAnswers[numberQuestion]].name)) {
+      setQuestionPicture(currentQuestion[rightAnswers[numberQuestion]].image);
+      setQuestionName(currentQuestion[rightAnswers[numberQuestion]].name);
       setNumberQuestion(numberQuestion + 1);
       setScore(score + scoreOfLevel);
       playSound('win');
@@ -48,7 +48,7 @@ export default function App() {
       setScoreOfLevel(scoreOfLevel - 1);
       playSound('lose');
     }
-    setChoosedBird(questions[answer[0] - 1]);
+    setChoosedBird(currentQuestion[answer[0] - 1]);
   }
   return (
     <>
