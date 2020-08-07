@@ -38,6 +38,7 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [scoreOfLevel, setScoreOfLevel] = useState(5);
   const [classesForButton, setClassesForButton] = useState('button button_not-active');
+  const [isGameEnd, setIsGameEnd] = useState(false);
   function checkAnswer(e) {
     if (!e.target.classList.contains('answers__answer_not-correct')) {
       const answer = e.target.textContent;
@@ -69,8 +70,8 @@ export default function App() {
     setHeaderLinks(arr);
   }
   function nextLevel() {
-    if (numberQuestion < 5) {
-      
+    if (numberQuestion >= 5) {
+      setIsGameEnd(true);
     } else {
       setCurrentQuestion(questions[numberQuestion + 1]);
       changeHeaderLinks(numberQuestion);
@@ -97,7 +98,7 @@ export default function App() {
         checkAnswer={checkAnswer}
       />
       <Button classesForButton={classesForButton} nextLevel={nextLevel} />
-      <GameEnd score={score} isVisible={false} />
+      <GameEnd score={score} isVisible={isGameEnd} />
     </>
   );
 }
