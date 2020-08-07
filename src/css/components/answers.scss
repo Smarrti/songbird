@@ -11,6 +11,10 @@
       color: $color-text-non-active;
       cursor: default;
     }
+    &_correct {
+      text-decoration: none;
+      color: $color-primary;
+    }
     & > * {
       padding-right: 10px;
     }
