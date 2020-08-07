@@ -70,18 +70,20 @@ export default function App() {
     });
     setHeaderLinks(arr);
   }
-  function nextLevel() {
-    if (numberQuestion >= 5) {
-      setIsGameEnd(true);
-    } else {
-      setCurrentQuestion(questions[numberQuestion + 1]);
-      changeHeaderLinks(numberQuestion);
-      setNumberQuestion(numberQuestion + 1);
-      setChoosedBird({});
-      setQuestionPicture(unknownBird);
-      setQuestionName('***');
-      setScoreOfLevel(5);
-      setClassesForButton('button button_not-active');
+  function nextLevel(e) {
+    if (!e.target.classList.contains('button_not-active')) {
+      if (numberQuestion >= 5) {
+        setIsGameEnd(true);
+      } else {
+        setCurrentQuestion(questions[numberQuestion + 1]);
+        changeHeaderLinks(numberQuestion);
+        setNumberQuestion(numberQuestion + 1);
+        setChoosedBird({});
+        setQuestionPicture(unknownBird);
+        setQuestionName('***');
+        setScoreOfLevel(5);
+        setClassesForButton('button button_not-active');
+      }
     }
   }
   function newGame() {
