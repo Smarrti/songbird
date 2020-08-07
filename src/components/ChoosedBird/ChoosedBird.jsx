@@ -14,7 +14,7 @@ function RightAnswer({ choosedBird }) {
         />
         <div className="choosed-bird__main">
           <p className="choosed-bird__name">
-            {typeof choosedBird.name === 'string' ? choosedBird.name : '***'}
+            {typeof choosedBird.name === 'string' ? choosedBird.name : 'Выберите птицу из списка'}
           </p>
           <p className="choosed-bird__species">
             {typeof choosedBird.species === 'string' ? choosedBird.species : ' '}
