@@ -7,6 +7,7 @@ import Question from './Question/Question.jsx';
 import Button from './Button/Button.jsx';
 import unknownBird from '../assets/bird.jpg';
 import playSound from './functions/playSoung';
+import GameEnd from './GameEnd/GameEnd.jsx';
 
 function createArrayOfUniqueNumbers(max, length) {
   const array = [];
@@ -68,14 +69,18 @@ export default function App() {
     setHeaderLinks(arr);
   }
   function nextLevel() {
-    setCurrentQuestion(questions[numberQuestion + 1]);
-    changeHeaderLinks(numberQuestion);
-    setNumberQuestion(numberQuestion + 1);
-    setChoosedBird({});
-    setQuestionPicture(unknownBird);
-    setQuestionName('***');
-    setScoreOfLevel(5);
-    setClassesForButton('button button_not-active');
+    if (numberQuestion < 5) {
+      
+    } else {
+      setCurrentQuestion(questions[numberQuestion + 1]);
+      changeHeaderLinks(numberQuestion);
+      setNumberQuestion(numberQuestion + 1);
+      setChoosedBird({});
+      setQuestionPicture(unknownBird);
+      setQuestionName('***');
+      setScoreOfLevel(5);
+      setClassesForButton('button button_not-active');
+    }
   }
   return (
     <>
@@ -92,6 +97,7 @@ export default function App() {
         checkAnswer={checkAnswer}
       />
       <Button classesForButton={classesForButton} nextLevel={nextLevel} />
+      <GameEnd score={score} isVisible={false} />
     </>
   );
 }
