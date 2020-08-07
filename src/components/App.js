@@ -26,7 +26,7 @@ function generateRightAnswers() {
 }
 
 export default function App() {
-  const [headerLinks] = useState(headerLinksArray);
+  const [headerLinks, setHeaderLinks] = useState(headerLinksArray);
   const [questions] = useState(questionsArray);
   const [rightAnswers] = useState(generateRightAnswers());
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
@@ -55,8 +55,21 @@ export default function App() {
       setChoosedBird(currentQuestion[answer[0] - 1]);
     }
   }
+  function changeHeaderLinks(currentNumberOfQuestion) {
+    const arr = headerLinks.map((link, index) => {
+      const newLink = link;
+      if (index === currentNumberOfQuestion) {
+        newLink.classNames = 'header__link';
+      } else if (index === currentNumberOfQuestion + 1) {
+        newLink.classNames = 'header__link header__link_active';
+      }
+      return newLink;
+    });
+    setHeaderLinks(arr);
+  }
   function nextLevel() {
     setCurrentQuestion(questions[numberQuestion + 1]);
+    changeHeaderLinks(numberQuestion);
     setNumberQuestion(numberQuestion + 1);
     setChoosedBird({});
     setQuestionPicture(unknownBird);
