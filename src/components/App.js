@@ -43,7 +43,6 @@ export default function App() {
       if (answer.includes(currentQuestion[rightAnswers[numberQuestion]].name)) {
         setQuestionPicture(currentQuestion[rightAnswers[numberQuestion]].image);
         setQuestionName(currentQuestion[rightAnswers[numberQuestion]].name);
-        setNumberQuestion(numberQuestion + 1);
         setScore(score + scoreOfLevel);
         playSound('win');
         setClassesForButton('button');
@@ -56,7 +55,7 @@ export default function App() {
     }
   }
   function nextLevel() {
-    setCurrentQuestion(numberQuestion + 1);
+    setCurrentQuestion(questions[numberQuestion + 1]);
     setNumberQuestion(numberQuestion + 1);
     setChoosedBird({});
     setQuestionPicture(unknownBird);
