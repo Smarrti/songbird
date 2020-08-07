@@ -29,7 +29,7 @@ function generateRightAnswers() {
 export default function App() {
   const [headerLinks, setHeaderLinks] = useState(headerLinksArray);
   const [questions] = useState(questionsArray);
-  const [rightAnswers] = useState(generateRightAnswers());
+  const [rightAnswers, setRightAnswers] = useState(generateRightAnswers());
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   const [choosedBird, setChoosedBird] = useState({});
   const [questionPicture, setQuestionPicture] = useState(unknownBird);
@@ -60,7 +60,8 @@ export default function App() {
   function changeHeaderLinks(currentNumberOfQuestion) {
     const arr = headerLinks.map((link, index) => {
       const newLink = link;
-      if (index === currentNumberOfQuestion) {
+      if (index === currentNumberOfQuestion
+        || newLink.classNames === 'header__link header__link_active') {
         newLink.classNames = 'header__link';
       } else if (index === currentNumberOfQuestion + 1) {
         newLink.classNames = 'header__link header__link_active';
@@ -83,6 +84,19 @@ export default function App() {
       setClassesForButton('button button_not-active');
     }
   }
+  function newGame() {
+    setRightAnswers(generateRightAnswers());
+    setCurrentQuestion(questions[0]);
+    setChoosedBird({});
+    setQuestionPicture(unknownBird);
+    setQuestionName('***');
+    setNumberQuestion(0);
+    setScore(0);
+    setScoreOfLevel(5);
+    setIsGameEnd(false);
+    changeHeaderLinks(-1);
+    setClassesForButton('button button_not-active');
+  }
   return (
     <>
       <Header headerLinks={headerLinks} score={score} />
@@ -98,7 +112,7 @@ export default function App() {
         checkAnswer={checkAnswer}
       />
       <Button classesForButton={classesForButton} nextLevel={nextLevel} />
-      <GameEnd score={score} isVisible={isGameEnd} />
+      <GameEnd score={score} isVisible={isGameEnd} newGame={newGame} />
     </>
   );
 }
